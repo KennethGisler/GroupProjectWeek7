@@ -12,9 +12,11 @@ public class ListDetails {
 	
 	private int id;
 	private String listName; //we had this penned as "name", changing it to listName for a bit more specificity.
-	private LocalDate dateAdded;
-	private Player player;
-	private List<Unit> roster;
+	private LocalDate dateAdded; //the date that the list was added or built
+	private Player player; //the player
+	private List<Unit> roster; //the army list player is useing or has.
+	
+	//private int totalPoints; Let's think about adding this cause it could be a nice touch. Tally up the total cost of the army that the player has.
 	
 	/**
 	 * 
@@ -79,6 +81,6 @@ public class ListDetails {
 	//methods
 	@Override
 	public String toString() {
-		return "[List Name: " + listName + ", Date Added: " + dateAdded + ", Player Info: " + player.toString() + ", Roster:" + roster;
+		return "[List Name: " + listName + ", Date Added: " + dateAdded + ", Player Info: " + player.toString() + ", Roster:" + roster + "]";
 	}
 }
