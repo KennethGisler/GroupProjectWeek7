@@ -3,6 +3,7 @@ package model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -13,6 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="player")
 public class Player {
+	@Id
 	@GeneratedValue
 	@Column(name="ID")
 	private int id;
