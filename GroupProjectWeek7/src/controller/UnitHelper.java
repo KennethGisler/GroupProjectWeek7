@@ -18,7 +18,7 @@ public class UnitHelper {
 	public void insertUnit(Unit u) { //add a unit
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(em);
+		em.persist(u);
 		em.getTransaction().commit();
 		em.close();
 	}
