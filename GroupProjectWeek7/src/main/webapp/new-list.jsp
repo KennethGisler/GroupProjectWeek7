@@ -29,5 +29,9 @@
 	<form action="startApp.html">
     <input type="submit" value="Go add new units instead." />
 	</form>
+	
+	<form action="veiwAllListsServlet">
+	<input type="submit" value="View all lists"/>
+	</form>
 </body>
 </html>

@@ -7,19 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Unit;
-
 /**
- * Servlet implementation class addUnitServlet
+ * Servlet implementation class AddUnitsForListServlet
  */
-@WebServlet("/addUnitServlet")
-public class AddUnitServlet extends HttpServlet {
+@WebServlet("/addUnitsForListServlet")
+public class AddUnitsForListServlet extends HttpServlet { //THIS SERVLET JUST TAKES YOU TO THE ADD LISTS PAGE!!!!!!!
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddUnitServlet() {
+    public AddUnitsForListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,18 +34,8 @@ public class AddUnitServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String unitName = request.getParameter("unitName"); //get's the parameters from the jsp file.
-		String unitType = request.getParameter("unitType");
-		Integer unitCost = Integer.parseInt(request.getParameter("unitCost"));
-		
-		System.out.println("Adding unit: [Name: " + unitName + ",Type: " + unitType + ",Cost: " + unitCost + "]"); //outputs all the parameters so you can see if they're right
-		Unit newUnit = new Unit(unitName,unitType,unitCost); //makes the new unit
-		
-		UnitHelper uh = new UnitHelper(); 
-		uh.insertUnit(newUnit); //sets the new unit
-		
-		getServletContext().getRequestDispatcher("/startApp.html").forward(request, response); //sends you back to the add-item/start page
-		
+		String path = "/new-list.jsp"; //THIS SERVLET JUST TAKES YOU TO THE ADD LISTS PAGE!!!!!!!
+		getServletContext().getRequestDispatcher((path)).forward(request, response);
 	}
 
 }
