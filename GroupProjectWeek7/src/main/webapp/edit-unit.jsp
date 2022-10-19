@@ -9,10 +9,10 @@
 </head>
 <body>
 	<form action="editUnitServlet" method="post">
-	Unit Name: <input type="text" name="unitName" value="${itemToEdit.unitName}">
-	Unit Type: <input type="text" name="unitType"value="${itemToEdit.unitType}">
-	Unit Cost: <input type="text" name="unitCost"value="${itemToEdit.unitCost}">
-	<input type="hidden" name="id" value="${itemToEdit.id}">
+	Unit Name: <input type="text" name="unitName" value="${unitToEdit.unitName}">
+	Unit Type: <input type="text" name="unitType"value="${unitToEdit.unitType}">
+	Unit Cost: <input type="text" name="unitCost"value="${unitToEdit.unitCost}">
+	<input type="hidden" name="id" value="${unitToEdit.id}">
 	<input type="submit" value="Save Edited Item">
 	</form>
 </body>

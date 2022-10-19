@@ -16,11 +16,11 @@
 					<td><h2>${currentlist.listName}</h2></td>
 				</tr>
 				<tr><td colspan="3">List Date: ${currentlist.dateAdded}</td></tr>
-				<tr><td colspan="3">Store: ${currentlist.store.player}</td></tr>
-				<c:forEach var="listVal" items="${currentlist.roster}">
+				<tr><td colspan="3">Player: ${currentlist.player.playerName}</td></tr>
+				<c:forEach var="currentUnit" items="${currentlist.roster}">
 					<tr>
 						<td></td><td colspan="3">
-							${listVal.unitName}, ${listVal.unitType}, ${listVal.unitCost}
+							${currentUnit.unitName}, ${currentUnit.unitType}, ${currentUnit.unitCost}
 						</td>
 					</tr>
 				</c:forEach>
@@ -31,7 +31,7 @@
 		<input type="submit" value="add" name="doThisToList">
 	</form>
 	
-	<form action="addItemsForListServlet">
+	<form action="addUnitsForListServlet">
     <input type="submit" value="Create a new List" />
 	</form>
 	

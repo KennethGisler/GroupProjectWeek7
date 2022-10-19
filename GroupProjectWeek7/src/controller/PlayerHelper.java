@@ -41,24 +41,22 @@ public class PlayerHelper {
 	}
 	
 	//search Methods
-	public Player findPlayer(String name, String army) {
+	public Player findPlayer(String name) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
+		TypedQuery<Player> typedQuery = em.createQuery("select p from Player p where p.playerName = :selectedName", Player.class);
+		typedQuery.setParameter("selectedName", name);
+		typedQuery.setMaxResults(1);
 		
-		TypedQuery<Player> tq = em.createQuery("select p from Player p where p.playerName = :selectedPlayerName and p.army = :selectedArmy",Player.class);
-		tq.setParameter("selectedPlayerName", name);
-		tq.setParameter("selectedArmy", army);
-		
-		tq.setMaxResults(1);
-		
-		Player playerFound;
+		Player foundPlayer;
 		try {
-			playerFound = tq.getSingleResult();
-		} catch (NoResultException ex) {
-			playerFound = new Player(name,army);
+			foundPlayer = typedQuery.getSingleResult();
 		}
-		
+		catch(NoResultException ex) {
+			foundPlayer = new Player(name);
+		}
 		em.close();
-		return playerFound;
+		
+		return foundPlayer;
 	}
 }

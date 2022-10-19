@@ -32,12 +32,15 @@ public class Player {
 	}
 	public Player(int id, String name, String army) {
 		this.id = id;
-		playerName = name;
+		this.playerName = name;
 		this.army = army;
 	}
 	public Player(String name, String army) {
-		playerName = name;
+		this.playerName = name;
 		this.army = army;
+	}
+	public Player(String name) {
+		this.playerName = name;
 	}
 	
 	//getters

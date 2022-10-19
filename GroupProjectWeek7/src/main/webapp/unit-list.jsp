@@ -10,18 +10,18 @@
 <body>
 	<form method="post" action="navigationServlet">
 	<table>
-	<c:forEach items="${requestScope.allItems}" var ="currentItem">
+	<c:forEach items="${requestScope.allItems}" var ="currentUnit">
 	<tr>
-		<td><input type="radio" name="id" value="${currentItem.id}"></td>
-		<td>${currentItem.unitName}</td>
-		<td>${currentItem.unitType}</td>
-		<td>${currentItem.unitCost}</td>
+		<td><input type="radio" name="id" value="${currentUnit.id}"></td>
+		<td>${currentUnit.unitName}</td>
+		<td>${currentUnit.unitType}</td>
+		<td>${currentUnit.unitCost}</td>
 	</tr>
 	</c:forEach>
 	</table>
-	<input type="submit" value="edit" name="doThisToItem">
-	<input type="submit" value="delete" name="doThisToItem">
-	<input type="submit" value="add" name="doThisToItem">
+	<input type="submit" value="edit" name="doThisToUnit">
+	<input type="submit" value="delete" name="doThisToUnit">
+	<input type="submit" value="add" name="doThisToUnit">
 	</form>
 </body>
 </html>

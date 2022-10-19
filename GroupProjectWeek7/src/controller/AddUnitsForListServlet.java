@@ -27,15 +27,22 @@ public class AddUnitsForListServlet extends HttpServlet { //THIS SERVLET JUST TA
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		UnitHelper dao = new UnitHelper();
+		
+		request.setAttribute("allUnits", dao.showAllUnits());
+		
+		if(dao.showAllUnits().isEmpty()) {
+			request.setAttribute("allItems", " ");
+		}
+		
+		getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/new-list.jsp"; //THIS SERVLET JUST TAKES YOU TO THE ADD LISTS PAGE!!!!!!!
-		getServletContext().getRequestDispatcher((path)).forward(request, response);
+		doGet(request, response);
 	}
 
 }

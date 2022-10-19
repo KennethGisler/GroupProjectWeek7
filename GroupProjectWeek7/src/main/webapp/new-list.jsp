@@ -17,20 +17,20 @@
 		Army: <input type="text" name="army"><br />
 		
 		Available Units:<br />
-		<select name="allItemsToAdd" multiple size="6" style="width: 300px">
-			<c:forEach items="${requestScope.allItems}" var="currentItem">
-				<option value="${currentItem.id}">${itemToEdit.unitName} | ${itemToEdit.unitType} | ${itemToEdit.unitCost}</option>
+		<select name="allUnitsToAdd" multiple size="6" style="width: 300px">
+			<c:forEach items="${requestScope.allUnits}" var="currentUnit">
+				<option value="${currentUnit.id}">${currentUnit.unitName} | ${currentUnit.unitType} | ${currentUnit.unitCost}</option>
 			</c:forEach>
 		</select>
 		<br />
-		<input type="submit" value="Create List and Add Items">
+		<input type="submit" value="Create List and Add Units">
 	</form>
 	
 	<form action="startApp.html">
     <input type="submit" value="Go add new units instead." />
 	</form>
 	
-	<form action="veiwAllListsServlet">
+	<form action="viewAllListsServlet">
 	<input type="submit" value="View all lists"/>
 	</form>
 </body>

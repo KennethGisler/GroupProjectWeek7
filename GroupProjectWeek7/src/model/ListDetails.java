@@ -43,20 +43,20 @@ public class ListDetails {
 	}
 	public ListDetails(int id, String name, LocalDate ld, Player player, List<Unit> ul) {  //defalut no arg followed by the three I think we will need. One has all, the next all but id, the last, all but id and list
 		this.id = id;
-		listName = name;
-		dateAdded = ld;
+		this.listName = name;
+		this.dateAdded = ld;
 		this.player = player;
-		roster = ul;
+		this.roster = ul;
 	}
 	public ListDetails(String name, LocalDate ld, Player player, List<Unit> ul) {
-		listName = name;
-		dateAdded = ld;
+		this.listName = name;
+		this.dateAdded = ld;
 		this.player = player;
-		roster = ul;
+		this.roster = ul;
 	}
 	public ListDetails(String name, LocalDate ld, Player player) {
-		listName = name;
-		dateAdded = ld;
+		this.listName = name;
+		this.dateAdded = ld;
 		this.player = player;
 	}
 	

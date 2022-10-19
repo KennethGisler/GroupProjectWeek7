@@ -33,14 +33,14 @@ public class Unit {
 	}
 	public Unit(int id, String name, String type, int cost) { //constructor with/without id
 		this.id = id;
-		unitName = name;
-		unitType = type;
-		unitCost = cost;
+		this.unitName = name;
+		this.unitType = type;
+		this.unitCost = cost;
 	}
 	public Unit(String name, String type, int cost) {
-		unitName = name;
-		unitType = type;
-		unitCost = cost;
+		this.unitName = name;
+		this.unitType = type;
+		this.unitCost = cost;
 	}
 	
 	//getters
